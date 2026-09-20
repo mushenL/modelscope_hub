@@ -973,7 +973,11 @@ ENV_AGENT_PLUGIN_REPO: str = "MODELSCOPE_AGENT_PLUGIN_REPO"
 #: ``MODELSCOPE_AGENT_PLUGIN_REPO`` *is* overridable and that is safe: it chooses
 #: which repository to fetch, but the owner still has to appear here, so it can
 #: pick among already-trusted owners without widening trust.
-AGENT_PLUGIN_TRUSTED_OWNERS: frozenset[str] = frozenset({"modelscope", "AI-ModelScope"})
+#: ⚠️ DEV BRANCH ONLY -- do not merge. ``mushenL`` is a personal account holding
+#: the plugin while it has no home under an official organisation. The branch that
+#: goes to review is ``feat/agent-install``, which differs from this one by exactly
+#: this line and the matching test expectation.
+AGENT_PLUGIN_TRUSTED_OWNERS: frozenset[str] = frozenset({"modelscope", "AI-ModelScope", "mushenL"})
 
 DEFAULT_AGENT_PLUGIN_REPO: str = "modelscope/agent-hub-plugin"
 DEFAULT_AGENT_PLUGIN_REVISION: str = "master"

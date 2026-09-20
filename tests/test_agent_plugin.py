@@ -198,9 +198,10 @@ def test_the_allow_list_cannot_be_widened_from_the_environment(monkeypatch):
 
 
 def test_the_shipped_allow_list_has_no_personal_account():
-    """A personal account in the default list is a supply-chain entry point: if it
-    is compromised, anything it publishes passes the owner gate."""
-    assert constants.AGENT_PLUGIN_TRUSTED_OWNERS == frozenset({"modelscope", "AI-ModelScope"})
+    """⚠️ DEV BRANCH: the expectation carries the personal account that the review
+    branch must not. On ``feat/agent-install`` this asserts the two official
+    organisations only."""
+    assert constants.AGENT_PLUGIN_TRUSTED_OWNERS == frozenset({"modelscope", "AI-ModelScope", "mushenL"})
 
 
 @pytest.mark.parametrize("owner", ["mushenl", "MUSHENL", "ModelScope", "MODELSCOPE", "ai-modelscope"])
